@@ -8,15 +8,15 @@ import java.sql.Driver;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Yurii Oliinyk on 12.10.2017.
- */
+
 public class BrowserInitializing {
     private static Map<String, WebDriver> drivers = new HashMap<String, WebDriver>();
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver() { return driver; }
+    public static WebDriver getDriver() {
+        return driver;
+    }
 
     public static WebDriver GetBrowser(int browserName) {
 
@@ -50,5 +50,6 @@ public class BrowserInitializing {
             drivers.get(key).close();
             drivers.get(key).quit();
         }
+        drivers.clear();
     }
 }
